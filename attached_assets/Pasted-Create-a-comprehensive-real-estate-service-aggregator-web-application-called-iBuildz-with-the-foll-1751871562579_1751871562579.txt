@@ -1,0 +1,94 @@
+Create a comprehensive real estate service aggregator web application called "iBuildz" with the following specifications:
+
+**Core Concept:**
+Build a service marketplace platform that connects property owners with verified construction service providers, inspired by MagicBricks, 99acres, Airbnb, and Booking.com interfaces.
+
+**Phase 1 Implementation (Prototype):**
+Focus on 2 primary service modules:
+1. Interior Design Services
+2. Furniture Services
+
+**Location Coverage:**
+- L.B. Nagar
+- B.N. Reddy
+
+**Language Support:**
+- Telugu
+- English (with language switcher)
+
+**Technical Requirements:**
+- Use Replit Auth for secure user authentication
+- Implement three-factor authentication (email verification, reCAPTCHA, OTP)
+- Create a PostgreSQL database using Replit's built-in database
+- Build responsive design with white background theme
+- Include Stripe payment integration for furniture purchases
+- Add UPI payment gateway support (if possible without API keys, use placeholders)
+
+**User Portals:**
+1. **User Portal Features:**
+   - Browse Interior Design services with placeholder portfolio images
+   - Browse Furniture catalog with placeholder product images and textures
+   - View service provider profiles and fake reviews
+   - Cost estimation and budgeting tool
+   - Contact merchant functionality
+   - Service booking system
+
+2. **Merchant Portal Features:**
+   - Service provider registration and profile management
+   - Add/edit services and portfolio images
+   - Manage availability and pricing
+   - View booking requests
+   - Update service information (changes reflect in user portal)
+
+**Homepage Design:**
+- Clean white background
+- "Latest Suggestions" section
+- Company policy and motto display:
+  - "Aim of Sivana: To simplify, streamline, and smartly connect every step of civil construction — from planning to workforce, with accessible technology for all."
+  - Motto: "Empowering Every Hand that Builds."
+- Contact information: Rishika Singh Rajput, +91 70134 61688, Project Head
+
+**Essential Features:**
+- Role-based hiring portal structure
+- Cost estimator tool with budget calculations
+- Review and rating system (populate with fake reviews initially)
+- Real-time data synchronization between merchant and user portals
+- Mobile-responsive design
+- Search and filter functionality
+
+**Data Structure:**
+Create database tables for:
+- Users (with role management)
+- Service providers/merchants
+- Services (Interior Design & Furniture)
+- Reviews and ratings
+- Bookings and transactions
+- Cost estimates
+
+**Future-Ready Architecture:**
+Design the system to easily accommodate additional modules:
+- Architect, Land Evaluator, Plumber, Electrician, Carpentry, Cement/Steel, Painter, Welder, Marble Workers, Hardware, Cleaner, Helpers, Finishing Crew
+
+**Security & Authentication:**
+- Implement Replit Auth for user management
+- Add email verification workflow
+- Include reCAPTCHA for form submissions
+- Implement OTP verification for phone numbers
+- Use placeholder implementations if API keys are required
+
+**Payment Integration:**
+- Integrate Stripe for furniture purchases
+- Add temporary buy portal with card and UPI options
+- Create secure checkout process
+- Implement order confirmation system
+
+**Additional Requirements:**
+- SEO-friendly URLs and meta tags
+- Performance optimization for fast loading
+- Error handling and validation
+- Admin dashboard for overall management
+- Analytics placeholder for future implementation
+
+Please create this as a full-stack web application with proper file structure, implement all database connections, and ensure the merchant portal updates reflect immediately in the user portal. Make the interface intuitive and professional, taking design inspiration from the mentioned reference websites.
+
+Use modern web technologies and ensure the application is production-ready for deployment on Replit.
