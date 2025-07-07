@@ -38,16 +38,16 @@ export function Header({ language, onLanguageChange, isUserPortal, onPortalToggl
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <Link href="/" className="text-gray-800 hover:text-emerald-green px-3 py-2 rounded-md text-sm font-medium">
-                {t('home')}
+                Home
               </Link>
               <Link href="/services" className="text-slate-gray hover:text-emerald-green px-3 py-2 rounded-md text-sm font-medium">
-                {t('services')}
+                Services
               </Link>
               <Link href="/about" className="text-slate-gray hover:text-emerald-green px-3 py-2 rounded-md text-sm font-medium">
-                {t('about')}
+                About
               </Link>
               <Link href="/contact" className="text-slate-gray hover:text-emerald-green px-3 py-2 rounded-md text-sm font-medium">
-                {t('contact')}
+                Contact
               </Link>
             </div>
           </div>
@@ -66,7 +66,7 @@ export function Header({ language, onLanguageChange, isUserPortal, onPortalToggl
                       : "text-slate-gray hover:bg-white hover:text-gray-800"
                   }`}
                 >
-                  {t('userPortal')}
+                  User Portal
                 </button>
                 <button
                   onClick={onPortalToggle}
@@ -76,7 +76,7 @@ export function Header({ language, onLanguageChange, isUserPortal, onPortalToggl
                       : "text-slate-gray hover:bg-white hover:text-gray-800"
                   }`}
                 >
-                  {t('merchantPortal')}
+                  Merchant Portal
                 </button>
               </div>
             )}

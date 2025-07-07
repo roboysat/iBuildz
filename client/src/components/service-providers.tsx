@@ -60,8 +60,8 @@ export function ServiceProviders({ language, onContactProvider, onViewProfile }:
     <section className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800">{t('featuredServiceProviders')}</h2>
-          <p className="mt-4 text-slate-gray">{t('connectWithProfessionals')}</p>
+          <h2 className="text-3xl font-bold text-gray-800">Featured Service Providers</h2>
+          <p className="mt-4 text-slate-gray">Connect with trusted professionals in your area</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -87,13 +87,13 @@ export function ServiceProviders({ language, onContactProvider, onViewProfile }:
                     {renderStars(provider.rating)}
                   </div>
                   <span className="text-slate-gray text-sm">
-                    {provider.rating} ({provider.reviewCount} {t('reviews')})
+                    {provider.rating} ({provider.reviewCount} reviews)
                   </span>
                 </div>
                 <div className="flex items-center">
                   <Clock className="h-4 w-4 text-emerald-green mr-2" />
                   <span className="text-slate-gray text-sm">
-                    {provider.experience}+ {t('yearsExperience')}
+                    {provider.experience}+ years experience
                   </span>
                 </div>
               </div>
@@ -106,14 +106,14 @@ export function ServiceProviders({ language, onContactProvider, onViewProfile }:
                   className="flex-1 bg-emerald-green text-white hover:bg-emerald-700"
                 >
                   <Phone className="mr-2 h-4 w-4" />
-                  {t('contact')}
+                  Contact
                 </Button>
                 <Button
                   onClick={() => onViewProfile(provider.id)}
                   variant="outline"
                   className="flex-1 border-emerald-green text-emerald-green hover:bg-emerald-50"
                 >
-                  {t('viewProfile')}
+                  View Profile
                 </Button>
               </div>
             </div>

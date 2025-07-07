@@ -1,13 +1,95 @@
 export const translations = {
   en: {
-    // Header
-    home: "Home",
-    services: "Services",
-    about: "About",
-    contact: "Contact",
-    signIn: "Sign In",
-    userPortal: "User Portal",
-    merchantPortal: "Merchant Portal",
+    // Navigation
+    nav: {
+      home: "Home",
+      services: "Services",
+      about: "About",
+      contact: "Contact",
+      signIn: "Sign In",
+      userPortal: "User Portal",
+      merchantPortal: "Merchant Portal"
+    },
+    
+    // Login
+    login: {
+      title: "Sign In",
+      subtitle: "Connect with trusted service providers",
+      user: "User",
+      merchant: "Service Provider",
+      email: "Email",
+      password: "Password",
+      signin: "Sign In",
+      register: "Register",
+      businessName: "Business Name",
+      serviceType: "Service Type",
+      location: "Location",
+      hasAccount: "Already have an account? Sign in",
+      noAccount: "Don't have an account? Register",
+      userDescription: "Access services from verified providers",
+      merchantDescription: "Manage your services and bookings",
+      merchantRegisterDescription: "Join our network of trusted service providers"
+    },
+    
+    // About
+    about: {
+      hero: {
+        title: "About iBuildz",
+        description: "Connecting property owners with verified construction service providers across L.B. Nagar and B.N. Reddy areas"
+      },
+      stats: {
+        providers: "Service Providers",
+        projects: "Completed Projects",
+        satisfaction: "Customer Satisfaction",
+        locations: "Service Locations"
+      },
+      mission: {
+        title: "Our Mission",
+        description: "iBuildz is dedicated to revolutionizing the construction and home improvement industry by providing a comprehensive platform that connects property owners with skilled, verified service providers. We believe in quality, transparency, and building lasting relationships through exceptional service."
+      },
+      services: {
+        title: "Our Services",
+        interior: "Interior Design",
+        furniture: "Furniture",
+        architecture: "Architecture",
+        plumbing: "Plumbing",
+        electrical: "Electrical",
+        carpentry: "Carpentry"
+      },
+      location: {
+        title: "Service Areas",
+        description: "Currently serving the L.B. Nagar and B.N. Reddy areas with plans to expand across Hyderabad and Telangana."
+      }
+    },
+    
+    // Contact
+    contact: {
+      hero: {
+        title: "Contact Us",
+        description: "Get in touch with our team for any questions or support"
+      },
+      info: {
+        title: "Get in Touch"
+      },
+      emergency: {
+        title: "Emergency Services",
+        description: "For urgent service requests, call our 24/7 helpline"
+      },
+      form: {
+        title: "Send us a Message",
+        description: "Fill out the form below and we'll get back to you soon",
+        name: "Name",
+        email: "Email",
+        phone: "Phone",
+        subject: "Subject",
+        message: "Message",
+        submit: "Send Message",
+        success: "Message Sent",
+        successMessage: "Thank you for your message. We'll get back to you soon!",
+        error: "Error",
+        fillRequired: "Please fill in all required fields"
+      }
+    },
     
     // Hero
     heroTitle: "Your Complete Real Estate",
@@ -137,14 +219,96 @@ export const translations = {
     learnMoreAboutSecurity: "Learn More About Security",
   },
   te: {
-    // Header
-    home: "హోమ్",
-    services: "సేవలు",
-    about: "గురించి",
-    contact: "సంప్రదింపులు",
-    signIn: "సైన్ ఇన్",
-    userPortal: "వినియోగదారు పోర్టల్",
-    merchantPortal: "వ్యాపారి పోర్టల్",
+    // Navigation
+    nav: {
+      home: "హోమ్",
+      services: "సేవలు",
+      about: "గురించి",
+      contact: "సంప్రదింపులు",
+      signIn: "సైన్ ఇన్",
+      userPortal: "వినియోగదారు పోర్టల్",
+      merchantPortal: "వ్యాపారి పోర్టల్"
+    },
+    
+    // Login
+    login: {
+      title: "సైన్ ఇన్",
+      subtitle: "విశ్వసనీయ సేవా ప్రదాతలతో కనెక్ట్ అవ్వండి",
+      user: "వినియోగదారు",
+      merchant: "సేవా ప్రదాత",
+      email: "ఇమెయిల్",
+      password: "పాస్‌వర్డ్",
+      signin: "సైన్ ఇన్",
+      register: "రిజిస్టర్",
+      businessName: "వ్యాపార పేరు",
+      serviceType: "సేవా రకం",
+      location: "లొకేషన్",
+      hasAccount: "ఇప్పటికే ఖాతా ఉందా? సైన్ ఇన్",
+      noAccount: "ఖాతా లేదా? రిజిస్టర్",
+      userDescription: "ధృవీకరించబడిన ప్రదాతల నుండి సేవలను యాక్సెస్ చేయండి",
+      merchantDescription: "మీ సేవలు మరియు బుకింగ్‌లను నిర్వహించండి",
+      merchantRegisterDescription: "మా విశ్వసనీయ సేవా ప్రదాతల నెట్‌వర్క్‌లో చేరండి"
+    },
+    
+    // About
+    about: {
+      hero: {
+        title: "iBuildz గురించి",
+        description: "L.B. నగర్ మరియు B.N. రెడ్డి ప్రాంతాలలో ధృవీకరించబడిన నిర్మాణ సేవా ప్రదాతలతో ఆస్తి యజమానులను కనెక్ట్ చేస్తుంది"
+      },
+      stats: {
+        providers: "సేవా ప్రదాతలు",
+        projects: "పూర్తయిన ప్రాజెక్టులు",
+        satisfaction: "కస్టమర్ సంతృప్తి",
+        locations: "సేవా స్థానాలు"
+      },
+      mission: {
+        title: "మా లక్ష్యం",
+        description: "iBuildz నిర్మాణం మరియు గృహ మెరుగుదల పరిశ్రమను విప్లవకరంగా మార్చడానికి అంకితమైంది, ఆస్తి యజమానులను నైపుణ్యం కలిగిన, ధృవీకరించబడిన సేవా ప్రదాతలతో కనెక్ట్ చేసే వ్యాపక వేదికను అందిస్తుంది. మేము నాణ్యత, పారదర్శకత మరియు అసాధారణ సేవ ద్వారా శాశ్వత సంబంధాలను నిర్మించడంలో విశ్వసిస్తాము."
+      },
+      services: {
+        title: "మా సేవలు",
+        interior: "ఇంటీరియర్ డిజైన్",
+        furniture: "ఫర్నిచర్",
+        architecture: "ఆర్కిటెక్చర్",
+        plumbing: "ప్లంబింగ్",
+        electrical: "ఎలక్ట్రికల్",
+        carpentry: "కార్పెంట్రీ"
+      },
+      location: {
+        title: "సేవా ప్రాంతాలు",
+        description: "ప్రస్తుతం L.B. నగర్ మరియు B.N. రెడ్డి ప్రాంతాలలో సేవలందిస్తున్నాము, హైదరాబాద్ మరియు తెలంగాణ అంతటా విస్తరించే ప్రణాళికలతో."
+      }
+    },
+    
+    // Contact
+    contact: {
+      hero: {
+        title: "మమ్మల్ని సంప్రదించండి",
+        description: "ఏవైనా ప్రశ్నలు లేదా మద్దతు కోసం మా టీమ్‌తో సంప్రదించండి"
+      },
+      info: {
+        title: "సంప్రదించండి"
+      },
+      emergency: {
+        title: "అత్యవసర సేవలు",
+        description: "అత్యవసర సేవా అభ్యర్థనల కోసం, మా 24/7 హెల్ప్‌లైన్‌కు కాల్ చేయండి"
+      },
+      form: {
+        title: "మాకు సందేశం పంపండి",
+        description: "దిగువ ఫారమ్‌ను పూరించండి మరియు మేము త్వరలో మీకు తిరిగి వస్తాము",
+        name: "పేరు",
+        email: "ఇమెయిల్",
+        phone: "ఫోన్",
+        subject: "విషయం",
+        message: "సందేశం",
+        submit: "సందేశం పంపండి",
+        success: "సందేశం పంపబడింది",
+        successMessage: "మీ సందేశానికి ధన్యవాదాలు. మేము త్వరలో మీకు తిరిగి వస్తాము!",
+        error: "లోపం",
+        fillRequired: "దయచేసి అన్ని అవసరమైన ఫీల్డ్‌లను పూరించండి"
+      }
+    },
     
     // Hero
     heroTitle: "మీ పూర్తి రియల్ ఎస్టేట్",
