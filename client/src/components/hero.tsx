@@ -24,7 +24,7 @@ export function Hero({ language, onFindServices, onJoinAsProvider }: HeroProps) 
           
           {/* Company Motto */}
           <div className="mt-8 bg-white rounded-lg p-6 shadow-sm max-w-4xl mx-auto">
-            <p className="text-lg font-semibold text-gray-800 mb-2">{t('aimOfSivana')}</p>
+            <p className="text-lg font-semibold text-gray-800 mb-2">{t('aimOfiBuildz')}</p>
             <p className="text-slate-gray mb-4">{t('aimDescription')}</p>
             <p className="text-emerald-green font-semibold">{t('motto')}</p>
           </div>
