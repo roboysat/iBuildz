@@ -103,7 +103,7 @@ export default function Login() {
             <h1 className="text-3xl font-bold text-charcoal">iBuildz</h1>
           </div>
           <p className="text-charcoal/60">
-            {t.login.subtitle}
+            Your gateway to trusted construction services
           </p>
           <div className="mt-4">
             <LanguageSwitcher 
@@ -117,11 +117,11 @@ export default function Login() {
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="user" className="flex items-center space-x-2">
               <User className="h-4 w-4" />
-              <span>{t.login.user}</span>
+              <span>User</span>
             </TabsTrigger>
             <TabsTrigger value="merchant" className="flex items-center space-x-2">
               <Store className="h-4 w-4" />
-              <span>{t.login.merchant}</span>
+              <span>Merchant</span>
             </TabsTrigger>
           </TabsList>
 
@@ -129,15 +129,15 @@ export default function Login() {
           <TabsContent value="user">
             <Card>
               <CardHeader>
-                <CardTitle>{t.login.user} {t.login.title}</CardTitle>
+                <CardTitle>User Login</CardTitle>
                 <CardDescription>
-                  {t.login.userDescription}
+                  Access your account to find and book construction services
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleUserLogin} className="space-y-4">
                   <div>
-                    <Label htmlFor="user-email">{t.login.email}</Label>
+                    <Label htmlFor="user-email">Email</Label>
                     <Input
                       id="user-email"
                       type="email"
@@ -148,7 +148,7 @@ export default function Login() {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="user-password">{t.login.password}</Label>
+                    <Label htmlFor="user-password">Password</Label>
                     <Input
                       id="user-password"
                       type="password"
@@ -158,7 +158,7 @@ export default function Login() {
                     />
                   </div>
                   <Button type="submit" className="w-full">
-                    {t.login.signin}
+                    Sign In
                   </Button>
                 </form>
                 <div className="mt-4 text-sm text-charcoal/60">
@@ -173,16 +173,16 @@ export default function Login() {
             <Card>
               <CardHeader>
                 <CardTitle>
-                  {t.login.merchant} {isRegistering ? t.login.register : t.login.title}
+                  Merchant {isRegistering ? "Registration" : "Login"}
                 </CardTitle>
                 <CardDescription>
-                  {isRegistering ? t.login.merchantRegisterDescription : t.login.merchantDescription}
+                  {isRegistering ? "Register your business to offer construction services" : "Access your merchant dashboard to manage services"}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleMerchantLogin} className="space-y-4">
                   <div>
-                    <Label htmlFor="merchant-email">{t.login.email}</Label>
+                    <Label htmlFor="merchant-email">Email</Label>
                     <Input
                       id="merchant-email"
                       type="email"
@@ -193,7 +193,7 @@ export default function Login() {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="merchant-password">{t.login.password}</Label>
+                    <Label htmlFor="merchant-password">Password</Label>
                     <Input
                       id="merchant-password"
                       type="password"
@@ -206,7 +206,7 @@ export default function Login() {
                   {isRegistering && (
                     <>
                       <div>
-                        <Label htmlFor="business-name">{t.login.businessName}</Label>
+                        <Label htmlFor="business-name">Business Name</Label>
                         <Input
                           id="business-name"
                           type="text"
@@ -217,7 +217,7 @@ export default function Login() {
                         />
                       </div>
                       <div>
-                        <Label htmlFor="service-type">{t.login.serviceType}</Label>
+                        <Label htmlFor="service-type">Service Type</Label>
                         <Select onValueChange={(value) => setMerchantForm(prev => ({ ...prev, serviceType: value }))}>
                           <SelectTrigger>
                             <SelectValue placeholder="Select service type" />
@@ -233,7 +233,7 @@ export default function Login() {
                         </Select>
                       </div>
                       <div>
-                        <Label htmlFor="location">{t.login.location}</Label>
+                        <Label htmlFor="location">Location</Label>
                         <Select onValueChange={(value) => setMerchantForm(prev => ({ ...prev, location: value }))}>
                           <SelectTrigger>
                             <SelectValue placeholder="Select location" />
@@ -249,7 +249,7 @@ export default function Login() {
                   )}
 
                   <Button type="submit" className="w-full">
-                    {isRegistering ? t.login.register : t.login.signin}
+                    {isRegistering ? "Register" : "Sign In"}
                   </Button>
                 </form>
 
@@ -259,7 +259,7 @@ export default function Login() {
                     onClick={() => setIsRegistering(!isRegistering)}
                     className="text-sm text-emerald-600 hover:underline"
                   >
-                    {isRegistering ? t.login.hasAccount : t.login.noAccount}
+                    {isRegistering ? "Already have an account? Sign In" : "Don't have an account? Register"}
                   </button>
                 </div>
 

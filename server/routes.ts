@@ -98,6 +98,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Services
+  app.post('/api/services', async (req, res) => {
+    try {
+      const serviceData = insertServiceSchema.parse(req.body);
+      const service = await storage.createService(serviceData);
+      res.json(service);
+    } catch (error) {
+      console.error("Error creating service:", error);
+      res.status(500).json({ message: "Failed to create service" });
+    }
+  });
+
   app.get('/api/services', async (req, res) => {
     try {
       const { categoryId, providerId } = req.query;
@@ -138,6 +149,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Furniture products
+  app.post('/api/furniture-products', async (req, res) => {
+    try {
+      const productData = insertFurnitureProductSchema.parse(req.body);
+      const product = await storage.createFurnitureProduct(productData);
+      res.json(product);
+    } catch (error) {
+      console.error("Error creating furniture product:", error);
+      res.status(500).json({ message: "Failed to create furniture product" });
+    }
+  });
+
   app.get('/api/furniture-products', async (req, res) => {
     try {
       const { providerId, category } = req.query;
