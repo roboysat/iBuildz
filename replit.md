@@ -109,4 +109,53 @@ Changelog:
 - Authentication: Simple demo authentication using localStorage
 - Pages: Landing, Services, About, Contact, Login, Cost Estimator, Merchant Portal
 - Database: PostgreSQL with Drizzle ORM
-- Sample Data: Needs to be initialized for service providers and services
+- Sample Data: Initialized with service providers, services, and furniture products
+- Login System: Fully functional with hardcoded strings (no translation errors)
+
+## Local Setup Instructions
+
+### Prerequisites
+1. **Node.js** (version 18 or higher)
+2. **npm** (comes with Node.js)
+3. **PostgreSQL database** (local installation or cloud service like Neon)
+
+### Installation Steps
+
+1. **Clone/Download the project files**
+   ```bash
+   git clone [your-repo-url]
+   cd ibuildz
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   Create a `.env` file in the root directory:
+   ```env
+   DATABASE_URL=your_postgresql_connection_string
+   SESSION_SECRET=your_session_secret_key
+   NODE_ENV=development
+   ```
+
+4. **Initialize the database**
+   ```bash
+   npm run db:push
+   ```
+
+5. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+6. **Initialize sample data** (optional)
+   - Visit: `http://localhost:5000/api/init-sample-data`
+   - Or use: `curl -X POST http://localhost:5000/api/init-sample-data`
+
+### Available Scripts
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run db:push` - Push database schema changes
