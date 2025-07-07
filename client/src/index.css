@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(41, 23%, 97%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(41, 20%, 95%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(41, 23%, 97%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(41, 15%, 85%);
+  --input: hsl(41, 15%, 85%);
+  --primary: hsl(160, 84%, 39%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(41, 20%, 95%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(41, 20%, 95%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+
+  /* Custom iBuildz theme colors */
+  --cream: hsl(41, 23%, 97%);
+  --off-white: hsl(41, 30%, 98%);
+  --warm-beige: hsl(41, 20%, 90%);
+  --soft-tan: hsl(41, 25%, 70%);
+  --slate-gray: hsl(220, 13%, 42%);
+  --emerald-green: hsl(160, 84%, 39%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(160, 84%, 39%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-cream {
+    background-color: var(--cream);
+  }
+  
+  .bg-off-white {
+    background-color: var(--off-white);
+  }
+  
+  .bg-warm-beige {
+    background-color: var(--warm-beige);
+  }
+  
+  .bg-soft-tan {
+    background-color: var(--soft-tan);
+  }
+  
+  .text-slate-gray {
+    color: var(--slate-gray);
+  }
+  
+  .text-emerald-green {
+    color: var(--emerald-green);
+  }
+  
+  .bg-emerald-green {
+    background-color: var(--emerald-green);
+  }
+  
+  .border-warm-beige {
+    border-color: var(--warm-beige);
+  }
+  
+  .border-soft-tan {
+    border-color: var(--soft-tan);
+  }
+  
+  .border-emerald-green {
+    border-color: var(--emerald-green);
+  }
+  
+  .hover\:bg-emerald-700:hover {
+    background-color: hsl(160, 84%, 35%);
+  }
+  
+  .hover\:text-emerald-green:hover {
+    color: var(--emerald-green);
+  }
+  
+  .hover\:text-emerald-700:hover {
+    color: hsl(160, 84%, 35%);
+  }
+  
+  .hover\:bg-emerald-50:hover {
+    background-color: hsl(160, 84%, 95%);
+  }
+  
+  .focus\:ring-emerald-green:focus {
+    --tw-ring-color: var(--emerald-green);
+  }
+}
