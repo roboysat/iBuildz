@@ -97,10 +97,10 @@ export function Header({ language, onLanguageChange, isUserPortal, onPortalToggl
               </div>
             ) : (
               <Button
-                onClick={() => window.location.href = "/api/login"}
+                onClick={() => window.location.href = "/login"}
                 className="bg-emerald-green text-white hover:bg-emerald-700"
               >
-                {t('signIn')}
+                Sign In
               </Button>
             )}
           </div>
@@ -166,7 +166,10 @@ export function Header({ language, onLanguageChange, isUserPortal, onPortalToggl
               <div className="pt-4 border-t border-warm-beige">
                 {isAuthenticated ? (
                   <Button
-                    onClick={() => window.location.href = "/api/logout"}
+                    onClick={() => {
+                      localStorage.removeItem('user');
+                      window.location.href = "/";
+                    }}
                     variant="outline"
                     className="w-full border-emerald-green text-emerald-green hover:bg-emerald-green hover:text-white"
                   >
@@ -174,10 +177,10 @@ export function Header({ language, onLanguageChange, isUserPortal, onPortalToggl
                   </Button>
                 ) : (
                   <Button
-                    onClick={() => window.location.href = "/api/login"}
+                    onClick={() => window.location.href = "/login"}
                     className="w-full bg-emerald-green text-white hover:bg-emerald-700"
                   >
-                    {t('signIn')}
+                    Sign In
                   </Button>
                 )}
               </div>

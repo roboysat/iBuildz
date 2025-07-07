@@ -17,22 +17,22 @@ export default function About() {
     {
       icon: <Users className="h-8 w-8 text-emerald-600" />,
       number: "500+",
-      label: t.about.stats.providers,
+      label: "Service Providers",
     },
     {
       icon: <Home className="h-8 w-8 text-emerald-600" />,
       number: "2000+",
-      label: t.about.stats.projects,
+      label: "Projects Completed",
     },
     {
       icon: <Award className="h-8 w-8 text-emerald-600" />,
       number: "98%",
-      label: t.about.stats.satisfaction,
+      label: "Customer Satisfaction",
     },
     {
       icon: <MapPin className="h-8 w-8 text-emerald-600" />,
       number: "25+",
-      label: t.about.stats.locations,
+      label: "Service Locations",
     },
   ];
 
@@ -50,10 +50,10 @@ export default function About() {
           {/* Hero Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-charcoal mb-4">
-              {t.about.hero.title}
+              About iBuildz
             </h1>
             <p className="text-lg text-charcoal/80 max-w-2xl mx-auto">
-              {t.about.hero.description}
+              Your trusted partner in connecting homeowners with verified construction professionals across L.B. Nagar and B.N. Reddy areas.
             </p>
           </div>
 
@@ -80,12 +80,12 @@ export default function About() {
           <Card className="mb-8">
             <CardHeader>
               <CardTitle className="text-2xl text-charcoal">
-                {t.about.mission.title}
+                Our Mission
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-charcoal/80 leading-relaxed">
-                {t.about.mission.description}
+                To bridge the gap between homeowners and reliable service providers, ensuring quality, transparency, and trust in every project. We are committed to transforming how people find and hire construction professionals.
               </p>
             </CardContent>
           </Card>
@@ -94,18 +94,18 @@ export default function About() {
           <Card className="mb-8">
             <CardHeader>
               <CardTitle className="text-2xl text-charcoal">
-                {t.about.services.title}
+                Our Services
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {[
-                  t.about.services.interior,
-                  t.about.services.furniture,
-                  t.about.services.architecture,
-                  t.about.services.plumbing,
-                  t.about.services.electrical,
-                  t.about.services.carpentry,
+                  "Interior Design & Decoration",
+                  "Furniture & Home Furnishing", 
+                  "Architecture & Planning",
+                  "Plumbing Services",
+                  "Electrical Installation",
+                  "Carpentry & Woodwork",
                 ].map((service, index) => (
                   <Badge key={index} variant="secondary" className="text-center p-3">
                     {service}
@@ -119,12 +119,12 @@ export default function About() {
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl text-charcoal">
-                {t.about.location.title}
+                Service Areas
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-charcoal/80 mb-4">
-                {t.about.location.description}
+                We proudly serve the following areas with our comprehensive network of verified professionals and quality services.
               </p>
               <div className="flex flex-wrap gap-2">
                 <Badge variant="outline">L.B. Nagar</Badge>

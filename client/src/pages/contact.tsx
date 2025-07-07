@@ -33,8 +33,8 @@ export default function Contact() {
     // Simple validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
-        title: t.contact.form.error,
-        description: t.contact.form.fillRequired,
+        title: "Error",
+        description: "Please fill in all required fields",
         variant: "destructive",
       });
       return;
@@ -42,8 +42,8 @@ export default function Contact() {
 
     // Simulate form submission
     toast({
-      title: t.contact.form.success,
-      description: t.contact.form.successMessage,
+      title: "Success",
+      description: "Your message has been sent successfully. We'll get back to you soon!",
     });
 
     // Reset form
@@ -77,10 +77,10 @@ export default function Contact() {
           {/* Hero Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-charcoal mb-4">
-              {t.contact.hero.title}
+              Contact Us
             </h1>
             <p className="text-lg text-charcoal/80 max-w-2xl mx-auto">
-              {t.contact.hero.description}
+              Get in touch with us for any questions, support, or to learn more about our services. We're here to help you connect with the right professionals.
             </p>
           </div>
 
@@ -90,7 +90,7 @@ export default function Contact() {
               <Card>
                 <CardHeader>
                   <CardTitle className="text-2xl text-charcoal">
-                    {t.contact.info.title}
+                    Contact Information
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -135,12 +135,12 @@ export default function Contact() {
               <Card>
                 <CardHeader>
                   <CardTitle className="text-xl text-charcoal">
-                    {t.contact.emergency.title}
+                    Emergency Support
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-charcoal/80 mb-2">
-                    {t.contact.emergency.description}
+                    Need urgent help? Our emergency support team is available 24/7 for critical issues.
                   </p>
                   <p className="font-semibold text-emerald-600">
                     24/7 Helpline: +91 9876543211
@@ -153,17 +153,17 @@ export default function Contact() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl text-charcoal">
-                  {t.contact.form.title}
+                  Send us a Message
                 </CardTitle>
                 <CardDescription>
-                  {t.contact.form.description}
+                  Fill out the form below and we'll get back to you as soon as possible.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="name">{t.contact.form.name} *</Label>
+                      <Label htmlFor="name">Name *</Label>
                       <Input
                         id="name"
                         type="text"
@@ -173,7 +173,7 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="email">{t.contact.form.email} *</Label>
+                      <Label htmlFor="email">Email *</Label>
                       <Input
                         id="email"
                         type="email"
@@ -186,7 +186,7 @@ export default function Contact() {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="phone">{t.contact.form.phone}</Label>
+                      <Label htmlFor="phone">Phone</Label>
                       <Input
                         id="phone"
                         type="tel"
@@ -195,7 +195,7 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <Label htmlFor="subject">{t.contact.form.subject}</Label>
+                      <Label htmlFor="subject">Subject</Label>
                       <Select onValueChange={(value) => handleInputChange("subject", value)}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select a subject" />
@@ -212,7 +212,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <Label htmlFor="message">{t.contact.form.message} *</Label>
+                    <Label htmlFor="message">Message *</Label>
                     <Textarea
                       id="message"
                       rows={5}
@@ -223,7 +223,7 @@ export default function Contact() {
                   </div>
 
                   <Button type="submit" className="w-full">
-                    {t.contact.form.submit}
+                    Send Message
                   </Button>
                 </form>
               </CardContent>
