@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Language, useTranslation } from "@/lib/i18n";
 import { MapPin, Star, Clock, Phone } from "lucide-react";

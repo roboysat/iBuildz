@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { Hero } from "@/components/hero";
 import { ServiceSearch, SearchFilters } from "@/components/service-search";

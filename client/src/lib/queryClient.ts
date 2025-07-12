@@ -7,19 +7,37 @@ async function throwIfResNotOk(res: Response) {
   }
 }
 
+// Helper to get demo auth headers from localStorage
+function getDemoAuthHeaders(): Record<string, string> {
+  const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
+  const userType = localStorage.getItem('userType') || 'user';
+  if (isAuthenticated) {
+    return {
+      'x-demo-authenticated': 'true',
+      'x-demo-user-type': userType,
+    };
+  }
+  return {};
+}
+
 export async function apiRequest(
   method: string,
   url: string,
-  data?: unknown | undefined,
+  body?: any,
+  options?: RequestInit
 ): Promise<Response> {
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+    ...getDemoAuthHeaders(),
+    ...(options?.headers as Record<string, string> || {}),
+  };
   const res = await fetch(url, {
     method,
-    headers: data ? { "Content-Type": "application/json" } : {},
-    body: data ? JSON.stringify(data) : undefined,
-    credentials: "include",
+    headers,
+    credentials: 'include',
+    body: body ? JSON.stringify(body) : undefined,
+    ...options,
   });
-
-  await throwIfResNotOk(res);
   return res;
 }
 
@@ -28,9 +46,10 @@ export const getQueryFn: <T>(options: {
   on401: UnauthorizedBehavior;
 }) => QueryFunction<T> =
   ({ on401: unauthorizedBehavior }) =>
-  async ({ queryKey }) => {
+  async ({ queryKey }: { queryKey: readonly unknown[] }) => {
     const res = await fetch(queryKey[0] as string, {
       credentials: "include",
+      headers: getDemoAuthHeaders(),
     });
 
     if (unauthorizedBehavior === "returnNull" && res.status === 401) {

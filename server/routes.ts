@@ -1,7 +1,6 @@
-import type { Express } from "express";
+import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { setupAuth, isAuthenticated } from "./replitAuth";
 import { 
   insertServiceCategorySchema,
   insertServiceProviderSchema,
@@ -14,6 +13,25 @@ import {
 } from "@shared/schema";
 import Stripe from "stripe";
 
+// Simple demo authentication middleware
+function demoIsAuthenticated(req: Request, res: Response, next: NextFunction) {
+  // For demo: check for a header or cookie (simulate localStorage)
+  // In production, use proper session/cookie auth
+  const isAuthenticated = req.headers["x-demo-authenticated"] === "true";
+  if (!isAuthenticated) {
+    return res.status(401).json({ message: "Unauthorized" });
+  }
+  // Attach a demo user object
+  (req as any).user = {
+    id: "demo-user-id",
+    email: "user@demo.com",
+    firstName: "Demo",
+    lastName: "User",
+    role: req.headers["x-demo-user-type"] || "user"
+  };
+  next();
+}
+
 // Stripe placeholder - for demo purposes
 const stripe = {
   paymentIntents: {
@@ -22,19 +40,12 @@ const stripe = {
 } as any;
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // Auth middleware
-  await setupAuth(app);
+  // Removed: await setupAuth(app);
 
   // Auth routes
-  app.get('/api/auth/user', isAuthenticated, async (req: any, res) => {
-    try {
-      const userId = req.user.claims.sub;
-      const user = await storage.getUser(userId);
-      res.json(user);
-    } catch (error) {
-      console.error("Error fetching user:", error);
-      res.status(500).json({ message: "Failed to fetch user" });
-    }
+  app.get('/api/auth/user', demoIsAuthenticated, async (req: Request, res: Response) => {
+    // Return the demo user object
+    res.json((req as any).user);
   });
 
   // Service categories
@@ -48,7 +59,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post('/api/service-categories', isAuthenticated, async (req, res) => {
+  app.post('/api/service-categories', demoIsAuthenticated, async (req: Request, res: Response) => {
     try {
       const categoryData = insertServiceCategorySchema.parse(req.body);
       const category = await storage.createServiceCategory(categoryData);
@@ -85,9 +96,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post('/api/service-providers', isAuthenticated, async (req: any, res) => {
+  app.post('/api/service-providers', demoIsAuthenticated, async (req: Request, res: Response) => {
     try {
-      const userId = req.user.claims.sub;
+      const userId = (req as any).user.id; // Use req.user.id for demo
       const providerData = insertServiceProviderSchema.parse({ ...req.body, userId });
       const provider = await storage.createServiceProvider(providerData);
       res.json(provider);
@@ -137,7 +148,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post('/api/services', isAuthenticated, async (req, res) => {
+  app.post('/api/services', demoIsAuthenticated, async (req: Request, res: Response) => {
     try {
       const serviceData = insertServiceSchema.parse(req.body);
       const service = await storage.createService(serviceData);
@@ -188,7 +199,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post('/api/furniture-products', isAuthenticated, async (req, res) => {
+  app.post('/api/furniture-products', demoIsAuthenticated, async (req: Request, res: Response) => {
     try {
       const productData = insertFurnitureProductSchema.parse(req.body);
       const product = await storage.createFurnitureProduct(productData);
@@ -200,9 +211,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Bookings
-  app.get('/api/bookings', isAuthenticated, async (req: any, res) => {
+  app.get('/api/bookings', demoIsAuthenticated, async (req: Request, res: Response) => {
     try {
-      const userId = req.user.claims.sub;
+      const userId = (req as any).user.id; // Use req.user.id for demo
       const { providerId } = req.query;
       const bookings = await storage.getBookings(
         userId,
@@ -215,9 +226,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post('/api/bookings', isAuthenticated, async (req: any, res) => {
+  app.post('/api/bookings', demoIsAuthenticated, async (req: Request, res: Response) => {
     try {
-      const userId = req.user.claims.sub;
+      const userId = (req as any).user.id; // Use req.user.id for demo
       const bookingData = insertBookingSchema.parse({ ...req.body, userId });
       const booking = await storage.createBooking(bookingData);
       res.json(booking);
@@ -228,9 +239,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Cost estimates
-  app.get('/api/cost-estimates', isAuthenticated, async (req: any, res) => {
+  app.get('/api/cost-estimates', demoIsAuthenticated, async (req: Request, res: Response) => {
     try {
-      const userId = req.user.claims.sub;
+      const userId = (req as any).user.id; // Use req.user.id for demo
       const estimates = await storage.getCostEstimates(userId);
       res.json(estimates);
     } catch (error) {
@@ -299,9 +310,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post('/api/reviews', isAuthenticated, async (req: any, res) => {
+  app.post('/api/reviews', demoIsAuthenticated, async (req: Request, res: Response) => {
     try {
-      const userId = req.user.claims.sub;
+      const userId = (req as any).user.id; // Use req.user.id for demo
       const reviewData = insertReviewSchema.parse({ ...req.body, userId });
       const review = await storage.createReview(reviewData);
       res.json(review);

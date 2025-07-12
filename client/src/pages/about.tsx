@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { Header } from "@/components/header";
 import { Language, useTranslation } from "@/lib/i18n";
